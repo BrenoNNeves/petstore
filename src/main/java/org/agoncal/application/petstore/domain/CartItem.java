@@ -16,10 +16,10 @@ public class CartItem {
     // ======================================
 
     @NotNull
-    private Item item;
+    @Setter Item item;
     @NotNull
     @Min(1)
-    private Integer quantity;
+    @Setter Integer quantity;
 
     // ======================================
     // =            Constructors            =
@@ -46,17 +46,12 @@ public class CartItem {
         return item;
     }
 
-    public void setItem(Item item) {
-        this.item = item;
-    }
 
     public Integer getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
-    }
+    
 
     // ======================================
     // =   Methods hash, equals, toString   =

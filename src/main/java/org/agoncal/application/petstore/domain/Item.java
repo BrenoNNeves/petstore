@@ -8,6 +8,9 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author Antonio Goncalves
@@ -30,18 +33,18 @@ public class Item {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+     @Getter @Setter private Long id;
     @Column(nullable = false, length = 30)
     @NotNull
     @Size(min = 1, max = 30)
-    private String name;
+    @Getter @Setter private String name;
     @Column(length = 3000)
-    private String description;
+    @Getter @Setter private String description;
     @Column(nullable = false)
     @Price
-    private Float unitCost;
+    @Getter @Setter private Float unitCost;
     @NotEmpty
-    private String imagePath;
+    @Getter @Setter private String imagePath;
     @ManyToOne
     @JoinColumn(name = "product_fk", nullable = false)
     @XmlTransient
@@ -73,35 +76,6 @@ public class Item {
     // ======================================
     // =         Getters & setters          =
     // ======================================
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Float getUnitCost() {
-        return unitCost;
-    }
-
-    public void setUnitCost(Float unitCost) {
-        this.unitCost = unitCost;
-    }
-
-    public String getImagePath() {
-        return imagePath;
-    }
-
-    public void setImagePath(String imagePath) {
-        this.imagePath = imagePath;
-    }
-
     public Product getProduct() {
         return product;
     }
@@ -110,13 +84,7 @@ public class Item {
         this.product = product;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
+    
 
     // ======================================
     // =   Methods hash, equals, toString   =

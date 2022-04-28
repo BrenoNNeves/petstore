@@ -6,6 +6,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.Setter;
 /**
  * @author Antonio Goncalves
  *         http://www.antoniogoncalves.org

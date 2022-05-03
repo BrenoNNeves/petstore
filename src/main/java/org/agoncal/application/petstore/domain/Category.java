@@ -39,7 +39,7 @@ public class Category {
     @Column(nullable = false, length = 30)
     @NotNull
     @Size(min = 1, max = 30)
-    @Getter @Setter private String name;
+    @EqualsAndHashCode.Include @Getter @Setter private String name;
     @Column(nullable = false)
     @NotEmpty
     @Getter @Setter private String description;
@@ -88,23 +88,6 @@ public class Category {
     // ======================================
     // =   Methods hash, equals, toString   =
     // ======================================
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Category)) return false;
-
-        Category category = (Category) o;
-
-        if (!name.equals(category.name)) return false;
-
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        return name.hashCode();
-    }
 
     @Override
     public String toString() {

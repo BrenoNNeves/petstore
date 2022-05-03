@@ -12,6 +12,7 @@ import java.util.List;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.EqualsAndHashCode;
 
 /**
  * @author Antonio Goncalves
@@ -88,7 +89,7 @@ public class Category {
     // ======================================
     // =   Methods hash, equals, toString   =
     // ======================================
-
+    @EqualsAndHashCode(callSuper=true);
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder();
